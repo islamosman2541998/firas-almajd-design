@@ -132,15 +132,45 @@ def detail_page(s):
     related=''.join(f'<a href="{x["id"]}.html">{t(x["arName"],x["enName"],"h3")}<span class="arrow" aria-hidden="true">↗</span></a>' for x in siblings)
     return page_intro(s['arName'],s['enName'],s['arDesc'],s['enDesc'],images[sid])+f'''<section class="detail-scope section-space"><div class="container-wide detail-grid"><div class="reveal">{label('نطاق الخدمة','SERVICE SCOPE')}{t('أعمال متكاملة.<br>وتفاصيل واضحة.','A connected scope.<br>Clear details.','h2')}{t(s['arDesc'],s['enDesc'],'p')}{link('contact.html?service='+sid,'ناقش هذه الخدمة معنا','Discuss this service','button button-gold')}</div><ul class="scope-list reveal">{scope}</ul></div></section><section class="request-prep section-space"><div class="container-wide prep-grid"><div>{label('خطوتك الأولى','YOUR FIRST STEP')}{t('ما الذي يساعدنا<br>على فهم طلبك؟','What helps us<br>understand your request?','h2')}{t('ابدأ بالمعلومات المتاحة ونكمل التفاصيل معًا','Start with what you have and we will complete the details together','p')}</div><div><ul>{needs}</ul>{link('contact.html?service='+sid,'ابدأ من هنا','Start the conversation')}</div></div></section><section class="related-section section-space"><div class="container-wide">{heading('خدمات تكمل الصورة.','Services that complete the picture.','','','','قد يحتاج مشروعك أيضًا','YOUR PROJECT MAY ALSO NEED')}<div class="related-links">{related}</div>{link('services.html','العودة لجميع الخدمات','Back to all services')}</div></section>'''+cta()
 
+def projects_page():
+    projects=[
+      ('project-villa.png','فيلا سكنية معاصرة','Contemporary private villa','الرياض','Riyadh','مقاولات وتشطيبات خارجية','Construction and exterior finishes'),
+      ('project-cafe.png','تجهيز مساحة تجارية','Commercial space fit-out','الرياض','Riyadh','تشطيبات وJoinery وأعمال MEP','Fit-out, joinery and MEP works'),
+      ('project-landscape.png','تنسيق فناء سكني','Residential courtyard landscape','الرياض','Riyadh','Landscape وشبكات ري','Landscape and irrigation')]
+    cards=''.join(f'''<article class="project-card reveal"><div class="project-card-image"><img src="assets/{image}" alt="{ar_title}" data-alt-ar="{ar_title}" data-alt-en="{en_title}" loading="lazy" width="1536" height="1024"></div><div class="project-card-copy"><div class="project-meta">{t(location_ar,location_en)}<span>—</span>{t(scope_ar,scope_en)}</div>{t(ar_title,en_title,'h2')}</div></article>''' for image,ar_title,en_title,location_ar,location_en,scope_ar,scope_en in projects)
+    return page_intro('مشاريعنا','Our projects','نماذج مختارة من مجالات التنفيذ والتجهيز','Selected work across construction and fit-out','hero')+f'''<section class="projects-showcase section-space"><div class="container-wide"><div class="section-heading reveal"><div>{label('أعمال مختارة','SELECTED WORK')}{t('تفاصيل تصنع الفرق','Details make the difference','h2')}</div></div><div class="project-card-grid">{cards}</div></div></section>'''+cta()
+
+def gallery_page():
+    images=[
+      ('project-villa.png','فيلا سكنية معاصرة','Contemporary private villa','wide'),
+      ('project-cafe.png','تجهيز مساحة تجارية','Commercial fit-out','tall'),
+      ('project-landscape.png','تنسيق فناء سكني','Residential courtyard landscape',''),
+      ('construction.webp','أعمال إنشاء وتجهيز مواقع','Construction and site preparation',''),
+      ('cafe.webp','تفاصيل تشطيبات داخلية','Interior fit-out details','wide'),
+      ('courtyard.webp','Landscape ومساحات خارجية','Landscape and outdoor spaces','tall'),
+      ('maintenance.webp','أعمال صيانة وتجهيز مرافق','Maintenance and facility works','')]
+    items=''.join(f'''<button class="portfolio-item {size} reveal" type="button" data-gallery-src="assets/{image}" data-gallery-alt-ar="{ar_alt}" data-gallery-alt-en="{en_alt}"><img src="assets/{image}" alt="{ar_alt}" data-alt-ar="{ar_alt}" data-alt-en="{en_alt}" loading="lazy"><span>{t(ar_alt,en_alt)}</span></button>''' for image,ar_alt,en_alt,size in images)
+    return page_intro('معرض الصور','Gallery','لقطات من مجالات البناء والتشطيبات وLandscape','A visual selection across construction, fit-out and landscape','courtyard')+f'''<section class="portfolio-section section-space"><div class="container-wide"><div class="portfolio-grid">{items}</div></div></section><dialog class="gallery-lightbox" id="galleryLightbox"><button class="gallery-close" type="button" aria-label="إغلاق" data-label="closeGallery">×</button><img id="galleryLightboxImage" src="assets/project-villa.png" alt="فيلا سكنية معاصرة"></dialog>'''
+
+def careers_page():
+    jobs=[
+      ('site-engineer','مهندس موقع','Site engineer','دوام كامل','Full time','الرياض','Riyadh','إدارة أعمال الموقع ومتابعة التنفيذ والتنسيق اليومي','Manage site execution and daily coordination'),
+      ('mep-engineer','مهندس MEP','MEP engineer','دوام كامل','Full time','الرياض','Riyadh','متابعة الأعمال الكهربائية والميكانيكية والسباكة','Coordinate electrical, mechanical and plumbing works'),
+      ('procurement-officer','مسؤول مشتريات','Procurement officer','دوام كامل','Full time','الرياض','Riyadh','إدارة طلبات المواد والتوريد ومتابعة الموردين','Manage material requests, supply and vendor follow-up')]
+    cards=''.join(f'''<article class="career-card reveal"><div class="career-meta">{t(type_ar,type_en)}<span>—</span>{t(location_ar,location_en)}</div>{t(title_ar,title_en,'h2')}{t(desc_ar,desc_en,'p')}<button class="button button-dark career-apply" type="button" data-job="{job_id}">{t('قدّم الآن','Apply now')}<span class="arrow" aria-hidden="true">↗</span></button></article>''' for job_id,title_ar,title_en,type_ar,type_en,location_ar,location_en,desc_ar,desc_en in jobs)
+    options=''.join(f'''<option value="{job_id}" data-ar="{title_ar}" data-en="{title_en}">{title_ar}</option>''' for job_id,title_ar,title_en,*_ in jobs)
+    return page_intro('الوظائف','Careers','انضم إلى فريق يعمل بوضوح واهتمام بالتفاصيل','Join a team focused on clarity and care','construction')+f'''<section class="career-board section-space"><div class="container-wide"><div class="section-heading reveal"><div>{label('الفرص المتاحة','OPEN ROLES')}{t('اختر الفرصة المناسبة','Choose your next opportunity','h2')}</div></div><div class="career-grid">{cards}</div></div></section><section class="career-application section-space" id="applicationSection" hidden><div class="container-wide application-layout"><div>{label('طلب التوظيف','APPLICATION')}{t('سجّل بياناتك','Tell us about yourself','h2')}{t('سنراجع بياناتك ونتواصل عند توافق الخبرة مع الوظيفة','We will review your details and contact matching candidates','p')}</div><form class="career-form" id="careerForm"><div class="career-form-grid"><label>{t('الاسم الكامل','Full name')}<input class="form-control" name="name" autocomplete="name" required maxlength="100"></label><label>{t('رقم الجوال','Mobile number')}<input class="form-control" name="phone" type="tel" autocomplete="tel" required maxlength="25"></label><label>{t('البريد الإلكتروني','Email')}<input class="form-control" name="email" type="email" autocomplete="email" required maxlength="160"></label><label>{t('الوظيفة','Position')}<select class="form-select" name="job" id="careerJob" required>{options}</select></label><label class="full">{t('سنوات الخبرة','Years of experience')}<input class="form-control" name="experience" type="number" min="0" max="50" required></label><label class="full">{t('نبذة مختصرة','Short profile')}<textarea class="form-control" name="summary" rows="4" maxlength="1000" required></textarea></label></div><button class="button button-gold" type="submit">{t('إرسال الطلب عبر WhatsApp','Send application via WhatsApp')}<span class="arrow" aria-hidden="true">↗</span></button><p class="form-status" id="careerFormStatus" role="status" aria-live="polite"></p></form></div></section>'''
+def upcoming_page(ar, en, desc_ar, desc_en, image):
+    return page_intro(ar,en,desc_ar,desc_en,image)+cta()
+
 header=BeautifulSoup(str(base.header),'html.parser')
 for brand in header.select('.brand'):
     brand['href']='index.html'
     brand.clear()
     brand.append(BeautifulSoup('<img class="stacked-logo" src="assets/logo-stacked.png" width="145" height="109" alt="Firas Al Majd — Construction & Development">','html.parser'))
 for a in header.select('a[href^="#"]'):
-    a['href']={'#home':'index.html','#about':'about.html','#services':'services.html','#approach':'approach.html','#contact':'contact.html'}.get(a['href'],a['href'])
-header.select_one('.desktop-nav').append(BeautifulSoup('<a href="contact.html" data-i18n="navContact">تواصل معنا</a>','html.parser'))
-head=str(base.head).replace('</head>','<link rel="stylesheet" href="pages.css?v=20260928-content2">\n</head>')
+    a['href']={'#home':'index.html','#about':'about.html','#services':'services.html','#projects':'projects.html','#gallery':'gallery.html','#careers':'careers.html','#approach':'approach.html','#contact':'contact.html'}.get(a['href'],a['href'])
+head=str(base.head).replace('</head>','<link rel="stylesheet" href="pages.css?v=20260928-portfolio4">\n</head>')
 
 def footer():
     return f'''<footer class="site-footer expanded-footer"><div class="container-wide"><div class="footer-columns"><div class="footer-brand"><a class="brand" href="index.html"><img class="stacked-logo" src="assets/logo-stacked.png" width="180" height="135" alt="Firas Al Majd — Construction & Development"></a>{t('نبني بثقة. ونترك أثرًا.','Built on trust. Made to last.','p')}</div><div>{t('استكشف فراس المجد','Explore Firas Al Majd','h2')}<a href="about.html">{t('من نحن','About us')}</a><a href="services.html">{t('خدماتنا','Our services')}</a><a href="approach.html">{t('رؤيتنا','Our vision')}</a><a href="contact.html">{t('تواصل معنا','Contact us')}</a></div><div>{t('مجالات العمل','Our disciplines','h2')}{''.join(f'<a href="{s["id"]}.html">{t(s["arName"],s["enName"])}</a>' for s in services)}</div><div>{t('لنبنِ معًا','Let’s build together','h2')}<a href="tel:+966503371820" dir="ltr">+966 50 337 1820</a><a href="mailto:FIRAS-CH@FIRASALMAJD.COM">FIRAS-CH@FIRASALMAJD.COM</a>{t('الرياض، حي الملك عبدالعزيز<br>شارع ابن كثير، 12233','Riyadh, King Abdulaziz District<br>Ibn Katheer Street, 12233','p')}<a href="#top" class="back-top">{t('إلى الأعلى','Back to top')}<span>↑</span></a></div></div><div class="footer-bottom"><span>© <span id="year">2026</span> {t('فراس المجد العمرانية للمقاولات. جميع الحقوق محفوظة.','Firas Al Majd Construction. All rights reserved.')}</span></div></div></footer>'''
@@ -150,7 +180,10 @@ pages={
  'about':('من نحن','About us',about_page()),
  'services':('خدماتنا','Our services',services_page()),
  'approach':('رؤيتنا','Our vision',approach_page()),
- 'contact':('تواصل معنا','Contact us',contact_page())
+ 'contact':('تواصل معنا','Contact us',contact_page()),
+ 'projects':('المشاريع','Projects',projects_page()),
+ 'gallery':('معرض الصور','Gallery',gallery_page()),
+ 'careers':('الوظائف','Careers',careers_page())
 }
 for s in services: pages[s['id']]=(s['arName'],s['enName'],detail_page(s))
 for name,(ar,en,content) in pages.items():
@@ -179,7 +212,7 @@ for name,(ar,en,content) in pages.items():
         a.attrs.pop('class',None)
         if a['href']==active:
             a['class']='active'; a['aria-current']='page'
-    output=f'''<!doctype html><html lang="ar" dir="rtl">{page_head}<body id="top" data-page="{name}" data-title-en="Firas Al Majd | {escape(en)}"><a class="skip-link" href="#main" data-i18n="skip">انتقل إلى المحتوى</a>{page_header}<main id="main">{content}</main>{footer()}<script src="assets/vendor/bootstrap.bundle.min.js"></script><script src="app.js"></script></body></html>'''
+    output=f'''<!doctype html><html lang="ar" dir="rtl">{page_head}<body id="top" data-page="{name}" data-title-en="Firas Al Majd | {escape(en)}"><div class="site-loader" id="siteLoader" role="status" aria-label="Loading"><img src="assets/logo-stacked.png" width="320" height="240" alt="Firas Al Majd"></div><a class="skip-link" href="#main" data-i18n="skip">انتقل إلى المحتوى</a>{page_header}<main id="main">{content}</main>{footer()}<script src="assets/vendor/bootstrap.bundle.min.js"></script><script src="app.js"></script></body></html>'''
     # Inline vectors avoid iOS emoji presentation of Unicode arrow characters.
     diagonal_svg='<svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg>'
     up_svg='<svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>'

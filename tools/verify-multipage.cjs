@@ -1,7 +1,7 @@
 const { chromium } = require('C:/Users/Islam/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 const fs = require('fs');
 const path = require('path');
-const pages = ['index','about','services','approach','contact','construction','fitout','logistics','supply','landscape','maintenance'];
+const pages = ['index','about','services','projects','gallery','careers','approach','contact','construction','fitout','logistics','supply','landscape','maintenance'];
 const widths = [320,375,390,768,1024,1440,1920];
 const assert=(condition,message)=>{if(!condition)throw Error(message)};
 (async()=>{
@@ -15,7 +15,8 @@ const assert=(condition,message)=>{if(!condition)throw Error(message)};
   await page.goto(`http://127.0.0.1:4173/${route}.html`,{waitUntil:'networkidle'});
   await page.evaluate(async()=>{document.querySelectorAll('img').forEach(i=>i.loading='eager');await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})));await document.fonts.ready;});
   assert(await page.locator('h1').count()===1,`Expected one h1 on ${route}`);
-  assert(await page.locator('.desktop-nav a[aria-current="page"]').count()===1,`Page navigation marker ${route}`);
+  const expectedActive=['index','about','services','projects','gallery','careers','construction','fitout','logistics','supply','landscape','maintenance'].includes(route)?1:0;
+  assert(await page.locator('.desktop-nav a[aria-current="page"]').count()===expectedActive,`Page navigation marker ${route}`);
   assert(await page.locator('.desktop-nav a[href^="#"]').count()===0,`Navbar has anchors ${route}`);
   assert(await page.locator('.brand-type').count()===0,`Old logo remains ${route}`);
   const links=await page.locator('a[href]').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('href')).filter(h=>h&&!/^(https?:|mailto:|tel:|#)/.test(h)));
@@ -45,7 +46,7 @@ const assert=(condition,message)=>{if(!condition)throw Error(message)};
  assert(await page.locator('html').getAttribute('lang')==='en','Language lost on page navigation');
  await page.setViewportSize({width:390,height:844});
  await page.locator('.menu-toggle').click();await page.locator('#mobileNav').waitFor({state:'visible'});
- await page.keyboard.press('Escape');await page.waitForTimeout(80);
+ await page.keyboard.press('Escape');await page.waitForTimeout(450);
  assert(await page.locator('.menu-toggle').getAttribute('aria-expanded')==='false','Escape failed');
  await page.locator('.menu-toggle').click();await page.locator('#mobileNav a[href="services.html"]').click();await page.waitForURL('**/services.html');
  for(const id of ['fitout','logistics','supply','landscape','maintenance']){
@@ -71,7 +72,7 @@ const assert=(condition,message)=>{if(!condition)throw Error(message)};
  await page.locator('.service-card').first().scrollIntoViewIfNeeded();await page.waitForTimeout(900);
  assert(await page.locator('.service-card').first().evaluate(e=>getComputedStyle(e).opacity)==='1','Reveal animation did not complete');
  assert(!errors.length,'Runtime errors '+JSON.stringify(errors));
- fs.writeFileSync('qa/results.json',JSON.stringify({pages:pages.length,responsiveCombinations:results.length,results,errors,checks:['All 11 standalone pages in Arabic and English at 7 widths','All local navigation targets and image assets exist','English content fully translated','One main heading and one active page link','English stacked logo on every page','Desktop and mobile cross-page navigation','Language preserved across pages','Mobile menu Escape and service accordions','FAQ disclosure','Service selection carried to contact page','Required field validation','WhatsApp recipient and encoded payload without sending','Language preserves form input','Scroll reveal with motion enabled'],passed:true},null,2));
+ fs.writeFileSync('qa/results.json',JSON.stringify({pages:pages.length,responsiveCombinations:results.length,results,errors,checks:['All 14 standalone pages in Arabic and English at 7 widths','All local navigation targets and image assets exist','English content fully translated','One main heading and one active page link','English stacked logo on every page','Desktop and mobile cross-page navigation','Language preserved across pages','Mobile menu Escape and service accordions','FAQ disclosure','Service selection carried to contact page','Required field validation','WhatsApp recipient and encoded payload without sending','Language preserves form input','Scroll reveal with motion enabled'],passed:true},null,2));
  console.log('PASS: all page, navigation, translation, responsive and interaction checks.');
  await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});

@@ -1,7 +1,24 @@
 'use strict';
+const siteLoader = document.getElementById('siteLoader');
+function hideSiteLoader() {
+  if (!siteLoader || siteLoader.classList.contains('is-hidden')) return;
+  siteLoader.classList.add('is-hidden');
+  try { sessionStorage.setItem('fam-loader-seen','1'); } catch {}
+  setTimeout(()=>siteLoader.remove(),500);
+}
+let loaderSeen = false;
+try { loaderSeen = sessionStorage.getItem('fam-loader-seen') === '1'; } catch {}
+if (loaderSeen) {
+  siteLoader?.remove();
+} else {
+  if (document.readyState === 'complete') setTimeout(hideSiteLoader,300);
+  else addEventListener('load',()=>setTimeout(hideSiteLoader,300),{once:true});
+  setTimeout(hideSiteLoader,3000);
+}
+
 const translations = {
   en: {
-    skip:'Skip to content', brand:'Firas Al Majd', brandSub:'CONSTRUCTION & DEVELOPMENT', mainNav:'Main navigation', mobileNav:'Mobile navigation', menu:'Open navigation', navHome:'Home', navAbout:'About us', navServices:'Services', navApproach:'Our vision', navContact:'Contact', startProject:'Let’s build together',
+    skip:'Skip to content', closeGallery:'Close gallery', brand:'Firas Al Majd', brandSub:'CONSTRUCTION & DEVELOPMENT', mainNav:'Main navigation', mobileNav:'Mobile navigation', menu:'Open navigation', navHome:'Home', navAbout:'About us', navServices:'Services', navProjects:'Projects', navGallery:'Gallery', navCareers:'Careers', navApproach:'Our vision', navContact:'Contact', startProject:'Contact us',
     heroEyebrow:'FIRAS AL MAJD CONSTRUCTION', heroLine1:'Building today.', heroLine2:'Shaping tomorrow.', heroDesc:'From the first foundation to the finishing touch. Your partner in construction and development, with integrated solutions for your vision.', exploreServices:'Explore our services', talkToUs:'Let’s talk', scroll:'Discover what we can build', locationShort:'Riyadh, Saudi Arabia', illustration:'Illustrative architectural concept', heroAlt:'Contemporary stone architecture with warm lighting — illustrative concept', courtyardAlt:'Contemporary landscaped courtyard — illustrative concept',
     value1:'Built on trust',value2:'Driven by vision',value3:'Crafted with care',value4:'Made to last',
     aboutLabel:'WHO WE ARE',aboutLine1:'Beyond construction.',aboutLine2:'Towards lasting value.',aboutLead:'At Firas Al Majd, every project is a responsibility. Every detail is an opportunity to build well.',aboutBody:'Firas Al Majd Construction brings together general contracting, fit-outs and infrastructure, alongside transport, material supply and landscaping. We connect the needs of your project through one coordinated workflow, from site preparation to handover.',qualityTitle:'Quality in execution',qualityText:'Considered materials. Careful details.',commitmentTitle:'Committed at every stage',commitmentText:'Clear coordination. Consistent follow-up.',discoverApproach:'Discover our vision',visualCaption:'The difference is in the details.',
@@ -66,7 +83,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 const mobileNav = document.getElementById('mobileNav');
 mobileNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>bootstrap.Collapse.getOrCreateInstance(mobileNav,{toggle:false}).hide()));
-document.addEventListener('keydown',event=>{if(event.key==='Escape' && mobileNav.classList.contains('show')){bootstrap.Collapse.getOrCreateInstance(mobileNav,{toggle:false}).hide();document.querySelector('.menu-toggle').focus();}});
+document.addEventListener('keydown',event=>{if(event.key!=='Escape'||document.querySelector('.menu-toggle').getAttribute('aria-expanded')!=='true')return;const collapse=bootstrap.Collapse.getOrCreateInstance(mobileNav,{toggle:false});const close=()=>{collapse.hide();document.querySelector('.menu-toggle').focus();};if(mobileNav.classList.contains('collapsing'))mobileNav.addEventListener('shown.bs.collapse',close,{once:true});else close();});
 const desktopMedia = matchMedia('(min-width: 992px)');
 desktopMedia.addEventListener('change',event=>{if(event.matches)bootstrap.Collapse.getOrCreateInstance(mobileNav,{toggle:false}).hide();});
 
@@ -95,6 +112,36 @@ document.getElementById('projectForm')?.addEventListener('submit',event=>{
   window.open(url,'_blank','noopener,noreferrer');
 });
 
+const galleryDialog = document.getElementById('galleryLightbox');
+const galleryImage = document.getElementById('galleryLightboxImage');
+document.querySelectorAll('[data-gallery-src]').forEach(button=>button.addEventListener('click',()=>{
+  galleryImage.src=button.dataset.gallerySrc;
+  galleryImage.alt=language==='ar'?button.dataset.galleryAltAr:button.dataset.galleryAltEn;
+  galleryDialog.showModal();
+}));
+document.querySelector('.gallery-close')?.addEventListener('click',()=>galleryDialog.close());
+galleryDialog?.addEventListener('click',event=>{if(event.target===galleryDialog)galleryDialog.close();});
+
+const applicationSection = document.getElementById('applicationSection');
+const careerJob = document.getElementById('careerJob');
+document.querySelectorAll('.career-apply').forEach(button=>button.addEventListener('click',()=>{
+  applicationSection.hidden=false;
+  careerJob.value=button.dataset.job;
+  applicationSection.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  setTimeout(()=>applicationSection.querySelector('input')?.focus(),450);
+}));
+document.getElementById('careerForm')?.addEventListener('submit',event=>{
+  event.preventDefault();
+  const form=event.currentTarget;
+  if(!form.reportValidity())return;
+  const data=new FormData(form);
+  const job=careerJob.options[careerJob.selectedIndex].text;
+  const message=language==='ar'
+    ?`مرحبًا فراس المجد، أرغب في التقديم على وظيفة\nالوظيفة: ${job}\nالاسم: ${data.get('name')}\nالجوال: ${data.get('phone')}\nالبريد: ${data.get('email')}\nسنوات الخبرة: ${data.get('experience')}\nنبذة: ${data.get('summary')}`
+    :`Hello Firas Al Majd, I would like to apply for a position\nPosition: ${job}\nName: ${data.get('name')}\nPhone: ${data.get('phone')}\nEmail: ${data.get('email')}\nYears of experience: ${data.get('experience')}\nProfile: ${data.get('summary')}`;
+  document.getElementById('careerFormStatus').textContent=language==='ar'?'طلبك جاهز للإرسال عبر WhatsApp':'Your application is ready to send via WhatsApp';
+  window.open('https://wa.me/966503371820?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');
+});
 // Keep navigation page-based. The small progress line reflects reading position only.
 const progress = document.createElement('div');
 progress.className = 'reading-progress';
