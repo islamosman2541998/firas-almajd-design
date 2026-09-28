@@ -1,0 +1,116 @@
+[
+  {
+    "id": "construction",
+    "enName": "Construction & infrastructure",
+    "arName": "المقاولات والبنية التحتية",
+    "arDesc": "تنفيذ الإنشاءات وتجهيز المواقع وفق نطاق المشروع",
+    "enDesc": "Construction and site preparation tailored to the project scope",
+    "arItems": [
+      "الإنشاءات والأعمال الخرسانية",
+      "أسقف Post-Tension",
+      "الحفر والردم والهدم والترحيل",
+      "الأسفلت وأعمال البنية التحتية"
+    ],
+    "enItems": [
+      "Structural and concrete works",
+      "Post-tensioned slabs",
+      "Excavation, backfilling & demolition",
+      "Asphalt & infrastructure"
+    ]
+  },
+  {
+    "id": "fitout",
+    "enName": "Fit-out & interior works",
+    "arName": "التشطيبات والتجهيز الداخلي",
+    "arDesc": "تشطيبات وتجهيز متكامل لمساحات جاهزة للاستلام",
+    "enDesc": "Complete fit-out for spaces ready for handover",
+    "arItems": [
+      "تجهيز المقاهي وتسليم مفتاح",
+      "أعمال Joinery والأثاث والديكور",
+      "تركيب الأرضيات والمطابخ",
+      "الدهانات وتشطيب الواجهات"
+    ],
+    "enItems": [
+      "Turnkey café fit-outs",
+      "Joinery, furniture & interiors",
+      "Flooring & kitchen installation",
+      "Painting & façade finishes"
+    ]
+  },
+  {
+    "id": "logistics",
+    "enName": "Transport & logistics",
+    "arName": "النقل والخدمات اللوجستية",
+    "arDesc": "نقل المياه والمواد بما يناسب احتياجات الموقع",
+    "enDesc": "Water and material transport suited to site needs",
+    "arItems": [
+      "نقل المياه للمشروعات",
+      "Flatbed Trailers والقلابات",
+      "تناكر Fire Truck",
+      "نقل مواد البناء والركام"
+    ],
+    "enItems": [
+      "Project water transport",
+      "Flatbed trailers & tipper trucks",
+      "Fire truck water tankers",
+      "Building materials & aggregate transport"
+    ]
+  },
+  {
+    "id": "supply",
+    "enName": "Materials & equipment",
+    "arName": "توريد المواد وتأجير المعدات",
+    "arDesc": "توريد مواد وأدوات ومعدات المشروعات",
+    "enDesc": "Materials, tools and equipment for project sites",
+    "arItems": [
+      "مواد البناء والحجر الديكوري",
+      "Base Course وSubbase وCrushed Sand",
+      "الأدوات الكهربائية والسباكة",
+      "تأجير معدات المشروعات"
+    ],
+    "enItems": [
+      "Building materials & decorative stone",
+      "Base course, sub-base & crushed sand",
+      "Electrical & plumbing supplies",
+      "Project equipment rental"
+    ]
+  },
+  {
+    "id": "landscape",
+    "enName": "Landscape & irrigation",
+    "arName": "تنسيق المواقع وشبكات الري",
+    "arDesc": "أعمال Landscape وشبكات ري تناسب الموقع والمناخ",
+    "enDesc": "Landscape and irrigation suited to the site and climate",
+    "arItems": [
+      "توريد وزراعة النجيل والنباتات",
+      "الأشجار المعمرة وأنواع النخيل",
+      "شبكات الري والتحكم وTimers",
+      "معالجة الملوحة والصيانة الزراعية"
+    ],
+    "enItems": [
+      "Turf & plant supply and planting",
+      "Mature trees & palm varieties",
+      "Irrigation networks, controls & timers",
+      "Salinity treatment & landscape care"
+    ]
+  },
+  {
+    "id": "maintenance",
+    "enName": "Maintenance & MEP",
+    "arName": "الصيانة والأعمال الكهروميكانيكية",
+    "arDesc": "صيانة للمباني والمرافق حسب احتياج الموقع",
+    "enDesc": "Building and facility maintenance tailored to site needs",
+    "arItems": [
+      "أعمال الكهرباء والميكانيكا والسباكة",
+      "كشف تسربات المياه",
+      "معالجة التشققات والرطوبة",
+      "عزل الأسطح والخزانات"
+    ],
+    "enItems": [
+      "Electrical, mechanical & plumbing works",
+      "Water leak detection",
+      "Crack & damp treatment",
+      "Roof & tank waterproofing"
+    ]
+  }
+]

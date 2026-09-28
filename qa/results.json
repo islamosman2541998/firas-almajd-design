@@ -1,0 +1,1410 @@
+{
+  "pages": 11,
+  "responsiveCombinations": 154,
+  "results": [
+    {
+      "route": "index",
+      "lang": "ar",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "index",
+      "lang": "ar",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "index",
+      "lang": "ar",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "index",
+      "lang": "ar",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "index",
+      "lang": "ar",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "index",
+      "lang": "ar",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "index",
+      "lang": "ar",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "index",
+      "lang": "en",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "index",
+      "lang": "en",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "index",
+      "lang": "en",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "index",
+      "lang": "en",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "index",
+      "lang": "en",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "index",
+      "lang": "en",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "index",
+      "lang": "en",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "about",
+      "lang": "ar",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "about",
+      "lang": "ar",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "about",
+      "lang": "ar",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "about",
+      "lang": "ar",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "about",
+      "lang": "ar",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "about",
+      "lang": "ar",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "about",
+      "lang": "ar",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "about",
+      "lang": "en",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "about",
+      "lang": "en",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "about",
+      "lang": "en",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "about",
+      "lang": "en",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "about",
+      "lang": "en",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "about",
+      "lang": "en",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "about",
+      "lang": "en",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "services",
+      "lang": "ar",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "services",
+      "lang": "ar",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "services",
+      "lang": "ar",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "services",
+      "lang": "ar",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "services",
+      "lang": "ar",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "services",
+      "lang": "ar",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "services",
+      "lang": "ar",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "services",
+      "lang": "en",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "services",
+      "lang": "en",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "services",
+      "lang": "en",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "services",
+      "lang": "en",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "services",
+      "lang": "en",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "services",
+      "lang": "en",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "services",
+      "lang": "en",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "approach",
+      "lang": "ar",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "approach",
+      "lang": "ar",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "approach",
+      "lang": "ar",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "approach",
+      "lang": "ar",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "approach",
+      "lang": "ar",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "approach",
+      "lang": "ar",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "approach",
+      "lang": "ar",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "approach",
+      "lang": "en",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "approach",
+      "lang": "en",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "approach",
+      "lang": "en",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "approach",
+      "lang": "en",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "approach",
+      "lang": "en",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "approach",
+      "lang": "en",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "approach",
+      "lang": "en",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "contact",
+      "lang": "ar",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "contact",
+      "lang": "ar",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "contact",
+      "lang": "ar",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "contact",
+      "lang": "ar",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "contact",
+      "lang": "ar",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "contact",
+      "lang": "ar",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "contact",
+      "lang": "ar",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "contact",
+      "lang": "en",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "contact",
+      "lang": "en",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "contact",
+      "lang": "en",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "contact",
+      "lang": "en",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "contact",
+      "lang": "en",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "contact",
+      "lang": "en",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "contact",
+      "lang": "en",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "construction",
+      "lang": "ar",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "construction",
+      "lang": "ar",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "construction",
+      "lang": "ar",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "construction",
+      "lang": "ar",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "construction",
+      "lang": "ar",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "construction",
+      "lang": "ar",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "construction",
+      "lang": "ar",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "construction",
+      "lang": "en",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "construction",
+      "lang": "en",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "construction",
+      "lang": "en",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "construction",
+      "lang": "en",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "construction",
+      "lang": "en",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "construction",
+      "lang": "en",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "construction",
+      "lang": "en",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "fitout",
+      "lang": "ar",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "fitout",
+      "lang": "ar",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "fitout",
+      "lang": "ar",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "fitout",
+      "lang": "ar",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "fitout",
+      "lang": "ar",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "fitout",
+      "lang": "ar",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "fitout",
+      "lang": "ar",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "fitout",
+      "lang": "en",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "fitout",
+      "lang": "en",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "fitout",
+      "lang": "en",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "fitout",
+      "lang": "en",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "fitout",
+      "lang": "en",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "fitout",
+      "lang": "en",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "fitout",
+      "lang": "en",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "logistics",
+      "lang": "ar",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "logistics",
+      "lang": "ar",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "logistics",
+      "lang": "ar",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "logistics",
+      "lang": "ar",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "logistics",
+      "lang": "ar",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "logistics",
+      "lang": "ar",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "logistics",
+      "lang": "ar",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "logistics",
+      "lang": "en",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "logistics",
+      "lang": "en",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "logistics",
+      "lang": "en",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "logistics",
+      "lang": "en",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "logistics",
+      "lang": "en",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "logistics",
+      "lang": "en",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "logistics",
+      "lang": "en",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "supply",
+      "lang": "ar",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "supply",
+      "lang": "ar",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "supply",
+      "lang": "ar",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "supply",
+      "lang": "ar",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "supply",
+      "lang": "ar",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "supply",
+      "lang": "ar",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "supply",
+      "lang": "ar",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "supply",
+      "lang": "en",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "supply",
+      "lang": "en",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "supply",
+      "lang": "en",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "supply",
+      "lang": "en",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "supply",
+      "lang": "en",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "supply",
+      "lang": "en",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "supply",
+      "lang": "en",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "landscape",
+      "lang": "ar",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "landscape",
+      "lang": "ar",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "landscape",
+      "lang": "ar",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "landscape",
+      "lang": "ar",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "landscape",
+      "lang": "ar",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "landscape",
+      "lang": "ar",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "landscape",
+      "lang": "ar",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "landscape",
+      "lang": "en",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "landscape",
+      "lang": "en",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "landscape",
+      "lang": "en",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "landscape",
+      "lang": "en",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "landscape",
+      "lang": "en",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "landscape",
+      "lang": "en",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "landscape",
+      "lang": "en",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "maintenance",
+      "lang": "ar",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "maintenance",
+      "lang": "ar",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "maintenance",
+      "lang": "ar",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "maintenance",
+      "lang": "ar",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "maintenance",
+      "lang": "ar",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "maintenance",
+      "lang": "ar",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "maintenance",
+      "lang": "ar",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "maintenance",
+      "lang": "en",
+      "width": 320,
+      "viewport": 320,
+      "documentWidth": 320,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "maintenance",
+      "lang": "en",
+      "width": 375,
+      "viewport": 375,
+      "documentWidth": 375,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "maintenance",
+      "lang": "en",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "maintenance",
+      "lang": "en",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "maintenance",
+      "lang": "en",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "maintenance",
+      "lang": "en",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "broken": [],
+      "overflow": []
+    },
+    {
+      "route": "maintenance",
+      "lang": "en",
+      "width": 1920,
+      "viewport": 1920,
+      "documentWidth": 1920,
+      "broken": [],
+      "overflow": []
+    }
+  ],
+  "errors": [],
+  "checks": [
+    "All 11 standalone pages in Arabic and English at 7 widths",
+    "All local navigation targets and image assets exist",
+    "English content fully translated",
+    "One main heading and one active page link",
+    "English stacked logo on every page",
+    "Desktop and mobile cross-page navigation",
+    "Language preserved across pages",
+    "Mobile menu Escape and service accordions",
+    "FAQ disclosure",
+    "Service selection carried to contact page",
+    "Required field validation",
+    "WhatsApp recipient and encoded payload without sending",
+    "Language preserves form input",
+    "Scroll reveal with motion enabled"
+  ],
+  "passed": true
+}
