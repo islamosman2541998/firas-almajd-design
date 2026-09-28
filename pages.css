@@ -37,4 +37,6 @@ html[dir=rtl] .card-open .icon-arrow{transform:scaleX(-1)}
 
 /* Keep both lines of the about heading in the same black. */
 #about-title{color:#000}
-@media(max-width:767px){html[lang=ar] .hero .hero-title{font-size:clamp(26px,8.5vw,46px)}}
+@media(max-width:991px){html[lang=ar] .hero .hero-title{font-size:clamp(20px,6vw,58px)}}
+
+.service-gallery .disciplines-subtitle{font-size:clamp(18px,1.8vw,24px);line-height:1.7;margin:0;color:var(--muted)}
