@@ -11,15 +11,15 @@ try { loaderSeen = sessionStorage.getItem('fam-loader-seen') === '1'; } catch {}
 if (loaderSeen) {
   siteLoader?.remove();
 } else {
-  if (document.readyState === 'complete') setTimeout(hideSiteLoader,300);
-  else addEventListener('load',()=>setTimeout(hideSiteLoader,300),{once:true});
+  if (document.readyState === 'complete') setTimeout(hideSiteLoader,2500);
+  else addEventListener('load',()=>setTimeout(hideSiteLoader,2500),{once:true});
   setTimeout(hideSiteLoader,3000);
 }
 
 const translations = {
   en: {
     skip:'Skip to content', closeGallery:'Close gallery', brand:'Firas Al Majd', brandSub:'CONSTRUCTION & DEVELOPMENT', mainNav:'Main navigation', mobileNav:'Mobile navigation', menu:'Open navigation', navHome:'Home', navAbout:'About us', navServices:'Services', navProjects:'Projects', navGallery:'Gallery', navCareers:'Careers', navApproach:'Our vision', navContact:'Contact', startProject:'Contact us',
-    heroEyebrow:'FIRAS AL MAJD CONSTRUCTION', heroLine1:'Building today.', heroLine2:'Shaping tomorrow.', heroDesc:'From the first foundation to the finishing touch. Your partner in construction and development, with integrated solutions for your vision.', exploreServices:'Explore our services', talkToUs:'Let’s talk', scroll:'Discover what we can build', locationShort:'Riyadh, Saudi Arabia', illustration:'Illustrative architectural concept', heroAlt:'Contemporary stone architecture with warm lighting — illustrative concept', courtyardAlt:'Contemporary landscaped courtyard — illustrative concept',
+    heroEyebrow:'FIRAS AL MAJD CONSTRUCTION', heroLine1:'Firas Al Majd', heroLine2:'Contracting Company', heroDesc:'From the first foundation to the finishing touch. Your partner in construction and development, with integrated solutions for your vision.', exploreServices:'Explore our services', talkToUs:'Let’s talk', scroll:'Discover what we can build', locationShort:'Riyadh, Saudi Arabia', illustration:'Illustrative architectural concept', heroAlt:'Contemporary stone architecture with warm lighting — illustrative concept', courtyardAlt:'Contemporary landscaped courtyard — illustrative concept',
     value1:'Built on trust',value2:'Driven by vision',value3:'Crafted with care',value4:'Made to last',
     aboutLabel:'WHO WE ARE',aboutLine1:'Beyond construction.',aboutLine2:'Towards lasting value.',aboutLead:'At Firas Al Majd, every project is a responsibility. Every detail is an opportunity to build well.',aboutBody:'Firas Al Majd Construction brings together general contracting, fit-outs and infrastructure, alongside transport, material supply and landscaping. We connect the needs of your project through one coordinated workflow, from site preparation to handover.',qualityTitle:'Quality in execution',qualityText:'Considered materials. Careful details.',commitmentTitle:'Committed at every stage',commitmentText:'Clear coordination. Consistent follow-up.',discoverApproach:'Discover our vision',visualCaption:'The difference is in the details.',
     servicesLabel:'OUR EXPERTISE',servicesLine1:'Ambitious visions.',servicesLine2:'Integrated solutions.',servicesIntro:'From the groundworks to the finishing touches, we bring the disciplines your project needs together.',serviceHelp:'Need more than one specialty? Let’s coordinate the complete solution.',discussNeeds:'Discuss your requirements',

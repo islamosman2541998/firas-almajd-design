@@ -34,3 +34,7 @@ html[dir=rtl] .card-open .icon-arrow{transform:scaleX(-1)}
 @media(max-width:767px){.project-card-grid,.career-grid{grid-template-columns:1fr}.project-card:last-child,.career-card:last-child{grid-column:auto}.project-card-image{height:300px}.project-card h2,.career-card h2{font-size:23px!important}.portfolio-grid{columns:1}.portfolio-item img,.portfolio-item.wide img,.portfolio-item.tall img{height:auto;max-height:520px}.portfolio-item span{opacity:1;transform:none}.portfolio-item:after{opacity:.8}.gallery-close{top:8px;inset-inline-end:8px}.career-form{padding:26px 22px}.career-form-grid{grid-template-columns:1fr}.career-form label.full{grid-column:auto}}
 /* Mobile and tablet header alignment. */
 @media(max-width:991px){.site-header .brand{grid-column:3;justify-self:end}.header-actions{grid-column:1;justify-self:start}}
+
+/* Keep both lines of the about heading in the same black. */
+#about-title{color:#000}
+@media(max-width:767px){html[lang=ar] .hero .hero-title{font-size:clamp(26px,8.5vw,46px)}}
