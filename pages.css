@@ -165,3 +165,9 @@ html main .service-gallery .disciplines-subtitle{font-size:clamp(18px,1.6vw,22px
   .hero .hero-content>p{margin-inline:auto}
   .hero .hero-buttons{justify-content:center}
 }
+
+/* Vertically center the home hero content below the navbar on mobile. */
+@media(max-width:767px){
+  .hero{display:flex;align-items:center}
+  .hero .hero-content{padding-block:32px}
+}
