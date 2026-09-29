@@ -14,12 +14,12 @@ if (siteLoader) {
 const translations = {
   en: {
     skip:'Skip to content', closeGallery:'Close gallery', brand:'Firas Al Majd', brandSub:'CONSTRUCTION & DEVELOPMENT', mainNav:'Main navigation', mobileNav:'Mobile navigation', menu:'Open navigation', navHome:'Home', navAbout:'About us', navServices:'Services', navProjects:'Projects', navGallery:'Gallery', navCareers:'Careers', navApproach:'Our vision', navContact:'Contact', startProject:'Contact us',
-    heroEyebrow:'FIRAS AL MAJD CONSTRUCTION', heroLine1:'Firas Al Majd', heroLine2:'Contracting Company', heroDesc:'From the first foundation to the finishing touch. Your partner in construction and development, with integrated solutions for your vision.', exploreServices:'Explore our services', talkToUs:'Let’s talk', scroll:'Discover what we can build', locationShort:'Riyadh, Saudi Arabia', illustration:'Illustrative architectural concept', heroAlt:'Contemporary stone architecture with warm lighting — illustrative concept', courtyardAlt:'Contemporary landscaped courtyard — illustrative concept',
+    heroEyebrow:'FIRAS AL MAJD CONSTRUCTION', heroLine1:'Firas Al Majd Urban Company', heroDesc:'From the first foundation to the finishing touch. Your partner in construction and development, with integrated solutions for your vision.', exploreServices:'Explore our services', talkToUs:'Let’s talk', scroll:'Discover what we can build', locationShort:'Riyadh, Saudi Arabia', illustration:'Illustrative architectural concept', heroAlt:'Contemporary stone architecture with warm lighting — illustrative concept', courtyardAlt:'Contemporary landscaped courtyard — illustrative concept',
     value1:'Built on trust',value2:'Driven by vision',value3:'Crafted with care',value4:'Made to last',
-    aboutLabel:'WHO WE ARE',aboutLine1:'Beyond construction.',aboutLine2:'Towards lasting value.',aboutLead:'At Firas Al Majd, every project is a responsibility. Every detail is an opportunity to build well.',aboutBody:'Firas Al Majd Construction brings together general contracting, fit-outs and infrastructure, alongside transport, material supply and landscaping. We connect the needs of your project through one coordinated workflow, from site preparation to handover.',qualityTitle:'Quality in execution',qualityText:'Considered materials. Careful details.',commitmentTitle:'Committed at every stage',commitmentText:'Clear coordination. Consistent follow-up.',discoverApproach:'Discover our vision',visualCaption:'The difference is in the details.',
-    servicesLabel:'OUR EXPERTISE',servicesLine1:'Ambitious visions.',servicesLine2:'Integrated solutions.',servicesIntro:'From the groundworks to the finishing touches, we bring the disciplines your project needs together.',serviceHelp:'Need more than one specialty? Let’s coordinate the complete solution.',discussNeeds:'Discuss your requirements',
+    aboutLabel:'WHO WE ARE',aboutLine1:'Beyond construction.',aboutLine2:'Towards lasting value.',aboutLead:'At Firas Al Majd, every project is a responsibility. Every detail is an opportunity to build well.',aboutBody:'Firas Al Majd Urban Company brings together general contracting, fit-outs and infrastructure, alongside transport, material supply and landscaping. We connect the needs of your project through one coordinated workflow, from site preparation to handover.',qualityTitle:'Quality in execution',qualityText:'Considered materials. Careful details.',commitmentTitle:'Committed at every stage',commitmentText:'Clear coordination. Consistent follow-up.',discoverApproach:'Discover our vision',visualCaption:'The difference is in the details.',
+    servicesLabel:'OUR EXPERTISE',servicesLine1:'Ambitious visions.',servicesLine2:'Integrated solutions.',servicesIntro:'From the groundworks to the finishing touches, we bring the disciplines your project needs together.',discussNeeds:'Discuss your requirements',
     approachLabel:'A CLEAR VISION',approachTitle:'Every step, considered.',approachIntro:'Good construction starts with understanding. We work with you through clear stages, keeping the full picture in view.',step1Title:'Listen & understand',step1Text:'We discuss your vision and site requirements to define the scope and priorities.',step2Title:'Plan with precision',step2Text:'We outline the execution, materials and schedule around your project’s requirements.',step3Title:'Build & coordinate',step3Text:'We coordinate teams and supply, with attention to quality and safety on site.',step4Title:'Deliver with care',step4Text:'We review the work with you and coordinate maintenance and follow-up needs.',
-    contactLabel:'LET’S BUILD SOMETHING THAT MATTERS',contactLine1:'Your next project',contactLine2:'starts with a conversation.',contactIntro:'Tell us what you have in mind. We’ll discuss the details and the services that suit your project.',phone:'CALL US',email:'EMAIL',visit:'OUR OFFICE',address:'King Abdulaziz District, Ibn Katheer St.<br>Riyadh 12233, Saudi Arabia',formTitle:'Tell us about your project',nameLabel:'Your name',namePlaceholder:'Full name',phoneLabel:'Mobile number',serviceLabel:'Required service',messageLabel:'Project brief',messagePlaceholder:'Project type, location and the details that matter to you…',formNote:'Prepare your message, then send it yourself through WhatsApp.',sendWhatsapp:'Continue to WhatsApp',openWhatsapp:'Open your message in WhatsApp',footerSlogan:'Multiple disciplines. One vision.',backTop:'Back to top',copyright:'Firas Al Majd Construction. All rights reserved.',selectService:'Choose a service',formReady:'Your message is ready. Review and send it in WhatsApp.',pageTitle:'Firas Al Majd | Building today. Shaping tomorrow.',metaDescription:'Firas Al Majd Construction — integrated construction, fit-out, infrastructure, logistics and landscaping services in Riyadh.'
+    contactLabel:'LET’S BUILD SOMETHING THAT MATTERS',contactLine1:'Your next project',contactLine2:'starts with a conversation.',contactIntro:'Tell us what you have in mind. We’ll discuss the details and the services that suit your project.',phone:'CALL US',email:'EMAIL',visit:'OUR OFFICE',address:'King Abdulaziz District, Ibn Katheer St.<br>Riyadh 12233, Saudi Arabia',formTitle:'Tell us about your project',nameLabel:'Your name',namePlaceholder:'Full name',phoneLabel:'Mobile number',serviceLabel:'Required service',messageLabel:'Project brief',messagePlaceholder:'Project type, location and the details that matter to you…',formNote:'Prepare your message, then send it yourself through WhatsApp.',sendWhatsapp:'Continue to WhatsApp',openWhatsapp:'Open your message in WhatsApp',footerSlogan:'Multiple disciplines. One vision.',backTop:'Back to top',copyright:'Firas Al Majd Urban Company. All rights reserved.',selectService:'Choose a service',formReady:'Your message is ready. Review and send it in WhatsApp.',pageTitle:'Firas Al Majd | Building today. Shaping tomorrow.',metaDescription:'Firas Al Majd Urban Company — integrated construction, fit-out, infrastructure, logistics and landscaping services in Riyadh.'
   }, ar: {}
 };
 document.querySelectorAll('[data-i18n]').forEach(el => { translations.ar[el.dataset.i18n] = el.innerHTML; });
@@ -86,6 +86,8 @@ if ('IntersectionObserver' in window) {
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.body.classList.add('js-motion');
     const revealObserver = new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target);}}),{threshold:.08});
+    document.querySelectorAll('main section > .container-wide > .row > div, .charter-grid > article, .method-row, .office-layout > div, .detail-grid > *, .section-heading, .partners-heading').forEach(el => el.classList.add('reveal'));
+    document.querySelectorAll('.service-card-grid, .certificates-grid, .charter-grid').forEach(grid => [...grid.children].forEach((el, index) => el.style.setProperty('--reveal-delay', `${(index % 4) * 80}ms`)));
     document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
   }
 }
@@ -96,10 +98,11 @@ document.getElementById('projectForm')?.addEventListener('submit',event=>{
   if(!form.reportValidity()) return;
   const data = new FormData(form);
   const name = data.get('name').trim();
+  const email = (data.get('email') || '').trim();
   const brief = data.get('message').trim();
   if(!name || !brief){const field=!name?document.getElementById('fullName'):document.getElementById('message');field.setCustomValidity(language==='ar'?'يرجى كتابة تفاصيل صحيحة':'Please enter valid details.');field.reportValidity();field.addEventListener('input',()=>field.setCustomValidity(''),{once:true});return;}
   const service = services.find(item=>item.id===data.get('service'));
-  const text = language === 'ar' ? `مرحبًا فراس المجد، أرغب في مناقشة مشروع.\nالاسم: ${name}\nالجوال: ${data.get('phone')}\nالخدمة: ${service.arName}\nتفاصيل المشروع: ${brief}` : `Hello Firas Al Majd, I would like to discuss a project.\nName: ${name}\nPhone: ${data.get('phone')}\nService: ${service.enName}\nProject brief: ${brief}`;
+  const text = language === 'ar' ? `مرحبًا فراس المجد، أرغب في مناقشة مشروع.\nالاسم: ${name}\nالجوال: ${data.get('phone')}${email ? '\nالبريد الإلكتروني: '+email : ''}\nالخدمة: ${service.arName}\nتفاصيل المشروع: ${brief}` : `Hello Firas Al Majd, I would like to discuss a project.\nName: ${name}\nPhone: ${data.get('phone')}${email ? '\nEmail: '+email : ''}\nService: ${service.enName}\nProject brief: ${brief}`;
   const url = 'https://wa.me/966503371820?text='+encodeURIComponent(text);
   const fallback = document.getElementById('whatsappFallback');
   fallback.href=url;fallback.hidden=false;
@@ -151,3 +154,93 @@ function updateProgress() {
 addEventListener('scroll',()=>{if(!scrollQueued){scrollQueued=true;requestAnimationFrame(updateProgress);}}, {passive:true});
 addEventListener('resize',updateProgress);
 updateProgress();
+
+// Local, RTL-aware partner carousel: native touch scrolling plus mouse drag.
+const partnersSlider = document.querySelector('.partners-slider');
+if (partnersSlider) {
+  const section = partnersSlider.closest('.partners');
+  const pauseButton = section.querySelector('.partner-pause');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let paused = reducedMotion.matches;
+  let lastInteraction = 0;
+  const interacted = () => { lastInteraction = performance.now(); };
+  let inView = false;
+  let drag = null;
+  const direction = () => document.documentElement.dir === 'rtl' ? -1 : 1;
+  const maxScroll = () => partnersSlider.scrollWidth - partnersSlider.clientWidth;
+  const step = () => partnersSlider.firstElementChild.getBoundingClientRect().width + parseFloat(getComputedStyle(partnersSlider).gap);
+  const move = delta => {
+    const max = maxScroll();
+    const current = Math.abs(partnersSlider.scrollLeft);
+    let target = current + delta * step();
+    if (delta > 0 && current >= max - 2) target = 0;
+    else if (delta < 0 && current <= 2) target = max;
+    partnersSlider.scrollTo({left: direction() * Math.max(0, Math.min(max, target)), behavior: reducedMotion.matches ? 'instant' : 'smooth'});
+  };
+  const dots = section.querySelector('.partner-dots');
+  let positions = [];
+  const updateProgress = () => {
+    const max = maxScroll();
+    const count = Math.max(1, Math.ceil((max - 1) / step()) + 1);
+    positions = Array.from({length: count}, (_, i) => Math.min(max, i * step()));
+    if (dots.children.length !== count) {
+      dots.replaceChildren(...positions.map((_, index) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'partner-dot';
+        button.setAttribute('aria-label', `المجموعة ${index + 1} / Group ${index + 1}`);
+        button.addEventListener('click', () => partnersSlider.scrollTo({left: direction() * positions[index], behavior: reducedMotion.matches ? 'instant' : 'smooth'}));
+        return button;
+      }));
+    }
+    const current = Math.abs(partnersSlider.scrollLeft);
+    const active = positions.reduce((best, position, i) => Math.abs(position - current) < Math.abs(positions[best] - current) ? i : best, 0);
+    [...dots.children].forEach((dot, index) => dot.setAttribute('aria-current', String(index === active)));
+  };
+  const updatePause = () => {
+    pauseButton.textContent = paused ? '▶' : 'Ⅱ';
+    pauseButton.setAttribute('aria-pressed', String(paused));
+    pauseButton.setAttribute('aria-label', paused ? 'تشغيل الحركة / Play autoplay' : 'إيقاف الحركة / Pause autoplay');
+  };
+  section.querySelector('.partner-next').addEventListener('click', () => move(1));
+  section.querySelector('.partner-prev').addEventListener('click', () => move(-1));
+  pauseButton.addEventListener('click', () => { paused = !paused; updatePause(); });
+  section.addEventListener('click', interacted);
+  section.addEventListener('keydown', interacted);
+  partnersSlider.addEventListener('pointerdown', interacted, {passive: true});
+  partnersSlider.addEventListener('pointerup', interacted, {passive: true});
+  partnersSlider.addEventListener('scroll', updateProgress, {passive: true});
+  partnersSlider.addEventListener('keydown', event => {
+    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault(); move((event.key === 'ArrowRight' ? 1 : -1) * direction());
+  });
+  partnersSlider.addEventListener('pointerdown', event => {
+    if (event.pointerType !== 'mouse' || event.button !== 0) return;
+    drag = {x: event.clientX, scroll: partnersSlider.scrollLeft};
+    partnersSlider.setPointerCapture(event.pointerId);
+    partnersSlider.classList.add('is-dragging');
+  });
+  partnersSlider.addEventListener('pointermove', event => {
+    if (drag) partnersSlider.scrollLeft = drag.scroll - (event.clientX - drag.x);
+  });
+  const endDrag = () => { drag = null; partnersSlider.classList.remove('is-dragging'); };
+  partnersSlider.addEventListener('pointerup', endDrag);
+  partnersSlider.addEventListener('pointercancel', endDrag);
+  partnersSlider.addEventListener('lostpointercapture', endDrag);
+  if ('IntersectionObserver' in window) new IntersectionObserver(entries => { inView = entries[0].isIntersecting; }, {threshold: .25}).observe(partnersSlider);
+  else inView = true;
+  setInterval(() => { if (!paused && !drag && inView && !document.hidden && performance.now() - lastInteraction >= 3500) move(1); }, 3500);
+  reducedMotion.addEventListener('change', event => { paused = event.matches; updatePause(); });
+  new ResizeObserver(updateProgress).observe(partnersSlider);
+  updatePause(); updateProgress();
+}
+
+const certificateDialog = document.querySelector('.certificate-dialog');
+if (certificateDialog) {
+  document.querySelectorAll('[data-certificate]').forEach(card => card.addEventListener('click', () => {
+    certificateDialog.querySelector('img').src = card.dataset.certificate;
+    certificateDialog.showModal();
+  }));
+  certificateDialog.querySelector('.certificate-close').addEventListener('click', () => certificateDialog.close());
+  certificateDialog.addEventListener('click', event => { if (event.target === certificateDialog) { const r = certificateDialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) certificateDialog.close(); } });
+}

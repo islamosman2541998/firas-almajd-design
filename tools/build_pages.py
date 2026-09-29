@@ -45,6 +45,9 @@ about = section('about').replace('href="#approach"','href="about.html"').replace
 process = section('approach').replace('03 /','08 /')
 process = process.replace('</section>', '<div class="container-wide section-end">'+t('تعرّف على ما تتضمنه كل مرحلة.','Explore what each stage involves.','p')+link('approach.html','رؤيتنا بالتفصيل','Our vision in detail')+'</div></section>')
 contact = section('contact').replace('04 /','11 /').replace('[+0-9 ()\\-]{7,25}',r'[+0-9 \(\)\-]{7,25}')
+home_contact_tree = BeautifulSoup(contact, 'html.parser')
+home_contact_tree.select_one('#projectForm').replace_with(BeautifulSoup('<div class="contact-map"><iframe title="خريطة منطقة المقر — Office area map" src="https://www.google.com/maps?q=King+Abdulaziz+District+Ibn+Katheer+Riyadh+12233&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><a href="https://www.google.com/maps/search/?api=1&amp;query=King+Abdulaziz+District+Ibn+Katheer+Riyadh+12233" target="_blank" rel="noopener noreferrer" data-ar="عرض المنطقة على Google Maps" data-en="View the area on Google Maps">عرض المنطقة على Google Maps</a></div>', 'html.parser'))
+home_contact = str(home_contact_tree)
 hero = section('home').replace('href="#services"','href="services.html"').replace('href="#contact"','href="contact.html"')
 values = str(base.find('div',class_='values-band'))
 
@@ -52,7 +55,18 @@ def service_gallery():
     cards=[]
     for i,s in enumerate(services):
         cards.append(f'''<a href="{s['id']}.html" class="service-card reveal"><div class="service-card-photo">{photo(images[s['id']],s['arName']+' — صورة تعبيرية',s['enName']+' — illustrative image')}{pic_note()}<span class="card-open" aria-hidden="true">↗</span></div><div class="service-card-title"><span class="card-number">0{i+1}</span>{t(s['arName'],s['enName'],'h3')}</div>{t(s['arDesc'],s['enDesc'],'p')}</a>''')
-    return f'''<section class="service-gallery section-space" id="expertise"><div class="container-wide"><div class="section-heading reveal"><div>{t('مجالات عملنا','OUR DISCIPLINES','h2')}{t('تخصصات عدة ورؤية واحدة','Multiple disciplines. One vision','p','disciplines-subtitle')}</div></div><div class="service-card-grid">{''.join(cards)}</div><div class="section-end">{t('حلول مترابطة لمختلف المشروعات','Connected solutions for different project types','p')}{link('services.html','جميع الخدمات بالتفصيل','All services in detail')}</div></div></section>'''
+    return f'''<section class="service-gallery section-space" id="expertise"><div class="container-wide"><div class="section-heading reveal"><div>{t('مجالات عملنا','OUR DISCIPLINES','h2')}{t('تخصصات عدة ورؤية واحدة','Multiple disciplines. One vision','p','disciplines-subtitle')}</div></div><div class="service-card-grid">{''.join(cards)}</div><div class="section-end">{link('services.html','جميع الخدمات بالتفصيل','All services in detail')}</div></div></section>'''
+
+def partners_section():
+    partners=json.loads((ROOT/'tools/partners.json').read_text(encoding='utf-8'))
+    cards=''.join(f'<div class="partner-card"><img src="assets/partners/{p["image"]}" alt="{escape(p["name"],quote=True)}" loading="lazy" draggable="false" width="400" height="220"></div>' for p in partners)
+    arrow='<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>'
+    return f'''<section class="partners section-space" id="partners" aria-labelledby="partners-title"><div class="container-wide"><div class="partners-heading reveal"><div><span class="partners-kicker">OUR PARTNERS</span>{t('شركاء النجاح','Our partners','h2','partners-title').replace('<h2 ','<h2 id="partners-title" ')}{t('معًا نبني علاقات تدوم','Building lasting relationships, together','p')}</div></div><div class="partners-carousel reveal"><button type="button" class="partner-arrow partner-prev" aria-label="السابق / Previous">{arrow}</button><div class="partners-slider" tabindex="0" role="region" aria-label="شعارات الشركاء / Partner logos">{cards}</div><button type="button" class="partner-arrow partner-next" aria-label="التالي / Next">{arrow}</button></div><div class="partners-pagination"><div class="partner-dots" role="group" aria-label="التنقل بين الشعارات / Navigate partner logos"></div><button type="button" class="partner-pause" aria-label="إيقاف الحركة / Pause autoplay" aria-pressed="false">Ⅱ</button></div></div></section>'''
+
+
+def certificates_page():
+    cards=''.join(f'''<button type="button" class="certificate-card reveal" data-certificate="assets/certificates/certificate-{i}.svg" aria-label="عرض الشهادة {i} / View certificate {i}"><span class="certificate-paper"><img src="assets/certificates/certificate-{i}.svg" alt="شهادة / Certificate {i}" width="800" height="1100" loading="lazy"></span><span class="certificate-caption"><span class="certificate-number">0{i}</span>{t('عرض الشهادة','View certificate')}<span aria-hidden="true">↗</span></span></button>''' for i in range(1,5))
+    return f'''<section class="certificates-intro"><div class="container-wide"><nav class="breadcrumb-nav" aria-label="Breadcrumb">{link('index.html','الرئيسية','Home','breadcrumb-home')}<span>/</span>{t('الشهادات المعتمدة','Certifications')}</nav><div class="certificates-intro-inner"><div class="reveal"><span class="partners-kicker">FIRAS AL MAJD</span>{t('الشهادات المعتمدة','Certifications','h1')}</div></div></div></section><section class="certificates-section section-space"><div class="container-wide"><div class="certificates-grid">{cards}</div></div></section><dialog class="certificate-dialog" aria-label="عرض الشهادة / Certificate viewer"><button type="button" class="certificate-close" aria-label="إغلاق / Close">×</button><img alt="شهادة / Certificate" width="800" height="1100"></dialog>'''
 
 def cafe_feature():
     return f'''<section class="cafe-feature" id="cafe"><div class="feature-photo">{photo('cafe','تجهيز مقهى بأعمال خشبية وحجرية — صورة تعبيرية','Café fit-out with wood and stone craftsmanship — illustrative image')}{pic_note()}</div><div class="feature-copy reveal">{label('تجهيز المقاهي والمساحات التجارية','CAFÉS & COMMERCIAL SPACES','03')}{t('من مساحة فارغة،<br>إلى تجربة لها روح.','From an empty space<br>to a place with character.','h2')}{t('نرتّب تفاصيل تجهيز المقهى من البداية: التشطيبات، النجارة، الأرضيات، وأعمال الكهرباء والسباكة. لتتكامل الوظيفة مع شكل المكان.','We coordinate your café fit-out from the start: finishes, joinery, flooring, electrical and plumbing works. Bringing the purpose of a space together with its character.','p')}<div class="feature-tags">{t('تجهيز متكامل','Complete fit-out')}{t('نجارة وديكور','Joinery & interiors')}{t('تسليم مفتاح','Turnkey delivery')}</div>{link('fitout.html','اكتشف خدمات التشطيبات','Explore fit-out services','text-link')}</div></section>'''
@@ -170,13 +184,14 @@ for brand in header.select('.brand'):
     brand.append(BeautifulSoup('<img class="stacked-logo" src="assets/logo-stacked.png" width="145" height="109" alt="Firas Al Majd — Construction & Development">','html.parser'))
 for a in header.select('a[href^="#"]'):
     a['href']={'#home':'index.html','#about':'about.html','#services':'services.html','#projects':'projects.html','#gallery':'gallery.html','#careers':'careers.html','#approach':'approach.html','#contact':'contact.html'}.get(a['href'],a['href'])
-head=str(base.head).replace('</head>','<link rel="stylesheet" href="pages.css?v=20260929-layout7">\n</head>')
+head=str(base.head).replace('</head>','<link rel="stylesheet" href="pages.css?v=20260929-footer16">\n</head>')
 
 def footer():
-    return f'''<footer class="site-footer expanded-footer"><div class="container-wide"><div class="footer-columns"><div class="footer-brand"><a class="brand" href="index.html"><img class="stacked-logo" src="assets/logo-stacked.png" width="180" height="135" alt="Firas Al Majd — Construction & Development"></a>{t('تخصصات عدة ورؤية واحدة','Multiple disciplines. One vision.','p')}</div><div>{t('استكشف فراس المجد','Explore Firas Al Majd','h2')}<a href="about.html">{t('من نحن','About us')}</a><a href="services.html">{t('خدماتنا','Our services')}</a><a href="approach.html">{t('رؤيتنا','Our vision')}</a><a href="contact.html">{t('تواصل معنا','Contact us')}</a></div><div>{t('مجالات العمل','Our disciplines','h2')}{''.join(f'<a href="{s["id"]}.html">{t(s["arName"],s["enName"])}</a>' for s in services)}</div><div>{t('لنبنِ معًا','Let’s build together','h2')}<a href="tel:+966503371820" dir="ltr">+966 50 337 1820</a><a href="mailto:FIRAS-CH@FIRASALMAJD.COM">FIRAS-CH@FIRASALMAJD.COM</a>{t('الرياض، حي الملك عبدالعزيز<br>شارع ابن كثير، 12233','Riyadh, King Abdulaziz District<br>Ibn Katheer Street, 12233','p')}<a href="#top" class="back-top">{t('إلى الأعلى','Back to top')}<span>↑</span></a></div></div><div class="footer-bottom"><span>© <span id="year">2026</span> {t('فراس المجد العمرانية للمقاولات. جميع الحقوق محفوظة.','Firas Al Majd Construction. All rights reserved.')}</span></div></div></footer>'''
+    return (ROOT/'tools/templates/footer.html').read_text(encoding='utf-8')
 
 pages={
- 'index':('نبني اليوم. نصنع الأثر.','Building today. Shaping tomorrow.',hero+about+service_gallery()+contact.replace('11 /','03 /')),
+ 'index':('نبني اليوم. نصنع الأثر.','Building today. Shaping tomorrow.',hero+about+service_gallery()+partners_section()+home_contact),
+ 'certificates':('الشهادات المعتمدة','Certifications',certificates_page()),
  'about':('من نحن','About us',about_page()),
  'services':('خدماتنا','Our services',services_page()),
  'approach':('رؤيتنا','Our vision',approach_page()),
@@ -205,7 +220,7 @@ for name,(ar,en,content) in pages.items():
     content=str(content_tree)
     page_head=BeautifulSoup(head,'html.parser')
     page_head.title.string=f'فراس المجد | {ar}'
-    page_head.select_one('meta[name="description"]')['content']=f'فراس المجد العمرانية للمقاولات — {ar}. خدمات المقاولات والتشطيبات والنقل والتوريد والLandscape والصيانة في الرياض.'
+    page_head.select_one('meta[name="description"]')['content']=f'شركة فراس المجد العمرانية — {ar}. خدمات المقاولات والتشطيبات والنقل والتوريد والLandscape والصيانة في الرياض.'
     page_header=BeautifulSoup(str(header),'html.parser')
     active='services.html' if name in images else name+'.html'
     for a in page_header.select('.desktop-nav a, .mobile-nav a'):
@@ -213,7 +228,7 @@ for name,(ar,en,content) in pages.items():
         if a['href']==active:
             a['class']='active'; a['aria-current']='page'
     loader='<div class="site-loader" id="siteLoader" role="status" aria-label="Loading"><img src="assets/logo-stacked.png" width="320" height="240" alt="Firas Al Majd"></div>' if name=='index' else ''
-    output=f'''<!doctype html><html lang="ar" dir="rtl">{page_head}<body id="top" data-page="{name}" data-title-en="Firas Al Majd | {escape(en)}">{loader}<a class="skip-link" href="#main" data-i18n="skip">انتقل إلى المحتوى</a>{page_header}<main id="main">{content}</main>{footer()}<script src="assets/vendor/bootstrap.bundle.min.js"></script><script src="app.js"></script></body></html>'''
+    output=f'''<!doctype html><html lang="ar" dir="rtl">{page_head}<body id="top" data-page="{name}" data-title-en="Firas Al Majd | {escape(en)}">{loader}<a class="skip-link" href="#main" data-i18n="skip">انتقل إلى المحتوى</a>{page_header}<main id="main">{content}</main>{footer()}<script src="assets/vendor/bootstrap.bundle.min.js"></script><script src="app.js?v=20260929-modal13"></script></body></html>'''
     # Inline vectors avoid iOS emoji presentation of Unicode arrow characters.
     diagonal_svg='<svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg>'
     up_svg='<svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>'
