@@ -183,3 +183,33 @@ html main .service-gallery .disciplines-subtitle{font-size:clamp(18px,1.6vw,22px
   .footer-columns.footer-columns-simple{gap:20px;padding-bottom:22px}
   .site-footer .footer-bottom{padding-block:12px}
 }
+
+/* Compact internal pages and a unified light service section. */
+body:not([data-page=index]) main>section:first-of-type{padding-top:48px}
+.page-cta{padding-block:28px}
+html main .page-cta h2{font-size:clamp(22px,1.8vw,26px)!important;line-height:1.5}
+.page-cta .button{font-size:13px;padding:14px 24px}
+body[data-page=services] .services{background:#eeece5;color:var(--ink)}
+body[data-page=services] .services :is(.gold,.service-toggle){color:var(--ink)}
+body[data-page=services] .services :is(.eyebrow,.service-number){color:#8b702b}
+body[data-page=services] .services :is(.section-heading>p,.service-content>p,.service-content li,.service-en){color:#746e63}
+body[data-page=services] .services :is(.service-list,.service-item,.service-plus){border-color:#ccc5b6}
+body[data-page=services] .service-list{--bs-accordion-color:var(--ink);--bs-accordion-border-color:#ccc5b6}
+body[data-page=services] .service-toggle:hover,body[data-page=services] .service-toggle[aria-expanded=true],body[data-page=services] .services-bottom .text-link{color:#80651c}
+body[data-page=services] .service-name{font-size:20px}
+:root{--title-section:clamp(24px,2vw,28px);--title-card:clamp(18px,1.5vw,20px)}
+html[lang=en] .desktop-nav{direction:ltr}
+.footer-columns-simple .footer-social h2{font-size:16px!important;font-weight:700!important}
+@media(max-width:767px){
+  body:not([data-page=index]) main>section:first-of-type{padding-top:32px}
+  .page-cta{padding-block:24px}
+  .page-cta>.container-wide{gap:18px}
+  html main .page-cta h2{font-size:22px!important}
+  body[data-page=services] .service-name{font-size:18px}
+  :root{--title-section:24px;--title-card:18px}
+  .footer-columns-simple .footer-social h2{font-size:14px!important}
+}
+
+/* Vertically center the home hero copy at every screen size. */
+body[data-page=index] .hero{display:flex;align-items:center}
+body[data-page=index] .hero .hero-content{padding-block:32px}

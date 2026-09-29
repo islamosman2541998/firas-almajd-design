@@ -184,7 +184,7 @@ for brand in header.select('.brand'):
     brand.append(BeautifulSoup('<img class="stacked-logo" src="assets/logo-stacked.png" width="145" height="109" alt="Firas Al Majd — Construction & Development">','html.parser'))
 for a in header.select('a[href^="#"]'):
     a['href']={'#home':'index.html','#about':'about.html','#services':'services.html','#projects':'projects.html','#gallery':'gallery.html','#careers':'careers.html','#approach':'approach.html','#contact':'contact.html'}.get(a['href'],a['href'])
-head=str(base.head).replace('</head>','<link rel="stylesheet" href="pages.css?v=20260929-footer19">\n</head>')
+head=str(base.head).replace('</head>','<link rel="stylesheet" href="pages.css?v=20260929-hero21">\n</head>')
 
 def footer():
     return (ROOT/'tools/templates/footer.html').read_text(encoding='utf-8')
@@ -217,6 +217,11 @@ for name,(ar,en,content) in pages.items():
         for selector,number in [('.sectors .eyebrow>span:first-child','09 /')]:
             el=content_tree.select_one(selector)
             if el: el.string=number
+    if name!='index':
+        for intro in content_tree.select('.page-intro, .certificates-intro'):
+            intro.decompose()
+        page_heading=BeautifulSoup(t(ar,en,'h1','visually-hidden'),'html.parser')
+        content_tree.insert(0,page_heading)
     content=str(content_tree)
     page_head=BeautifulSoup(head,'html.parser')
     page_head.title.string=f'فراس المجد | {ar}'
