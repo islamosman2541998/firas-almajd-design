@@ -214,15 +214,15 @@ html[lang=en] .desktop-nav{direction:ltr}
 body[data-page=index] .hero{display:flex;align-items:center}
 body[data-page=index] .hero .hero-content{padding-block:32px}
 
-/* Mobile footer: brand on the left, social links alongside it on the right. */
+/* Mobile footer: brand on the right, social links alongside it on the left. */
 @media(max-width:767px){
   .footer-columns.footer-columns-simple{grid-template-columns:minmax(0,1fr) minmax(0,1fr);direction:ltr;gap:16px;align-items:center}
-  .footer-columns-simple .footer-brand{grid-column:1;grid-row:1;min-width:0;text-align:center;align-self:center}
+  .footer-columns-simple .footer-brand{grid-column:2;grid-row:1;min-width:0;text-align:center;align-self:center}
   .footer-columns-simple .footer-brand .brand{justify-content:center}
   .footer-columns-simple .footer-brand .stacked-logo{width:112px;height:84px}
   .footer-columns-simple .footer-brand>p{font-size:11px;line-height:1.8;margin-top:6px;direction:rtl}
   html[lang=en] .footer-columns-simple .footer-brand>p{direction:ltr}
-  .footer-columns-simple>.footer-social{grid-column:2;grid-row:1;justify-self:stretch;min-width:0}
+  .footer-columns-simple>.footer-social{grid-column:1;grid-row:1;justify-self:stretch;min-width:0}
   .footer-columns-simple .footer-social h2{font-size:11px!important;margin-bottom:10px}
   .footer-social .social-icons{display:grid;grid-template-columns:repeat(3,30px);gap:8px;justify-content:center;direction:rtl}
   .footer-social .social-icon{width:30px;height:30px}
