@@ -184,7 +184,7 @@ for brand in header.select('.brand'):
     brand.append(BeautifulSoup('<img class="stacked-logo" src="assets/logo-stacked.png" width="145" height="109" alt="Firas Al Majd — Construction & Development">','html.parser'))
 for a in header.select('a[href^="#"]'):
     a['href']={'#home':'index.html','#about':'about.html','#services':'services.html','#projects':'projects.html','#gallery':'gallery.html','#careers':'careers.html','#approach':'approach.html','#contact':'contact.html'}.get(a['href'],a['href'])
-head=str(base.head).replace('</head>','<link rel="stylesheet" href="pages.css?v=20260929-footer23">\n</head>')
+head=str(base.head).replace('</head>','<link rel="stylesheet" href="pages.css?v=20260929-footer24">\n</head>')
 
 def footer():
     return (ROOT/'tools/templates/footer.html').read_text(encoding='utf-8')
