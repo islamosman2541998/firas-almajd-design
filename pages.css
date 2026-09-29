@@ -171,3 +171,15 @@ html main .service-gallery .disciplines-subtitle{font-size:clamp(18px,1.6vw,22px
   .hero{display:flex;align-items:center}
   .hero .hero-content{padding-block:32px}
 }
+
+/* Compact footer spacing. */
+.site-footer.expanded-footer{padding-top:28px}
+.footer-columns.footer-columns-simple{padding-bottom:24px}
+.footer-brand>p{margin-top:12px;margin-bottom:0}
+.footer-columns-simple .footer-social h2{color:#fff;margin-bottom:14px}
+.site-footer .footer-bottom{padding-block:14px}
+@media(max-width:767px){
+  .site-footer.expanded-footer{padding-top:24px}
+  .footer-columns.footer-columns-simple{gap:20px;padding-bottom:22px}
+  .site-footer .footer-bottom{padding-block:12px}
+}
