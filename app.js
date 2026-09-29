@@ -3,16 +3,11 @@ const siteLoader = document.getElementById('siteLoader');
 function hideSiteLoader() {
   if (!siteLoader || siteLoader.classList.contains('is-hidden')) return;
   siteLoader.classList.add('is-hidden');
-  try { sessionStorage.setItem('fam-loader-seen','1'); } catch {}
   setTimeout(()=>siteLoader.remove(),500);
 }
-let loaderSeen = false;
-try { loaderSeen = sessionStorage.getItem('fam-loader-seen') === '1'; } catch {}
-if (loaderSeen) {
-  siteLoader?.remove();
-} else {
-  if (document.readyState === 'complete') setTimeout(hideSiteLoader,2500);
-  else addEventListener('load',()=>setTimeout(hideSiteLoader,2500),{once:true});
+if (siteLoader) {
+  if (document.readyState === 'complete') setTimeout(hideSiteLoader,700);
+  else addEventListener('load',()=>setTimeout(hideSiteLoader,700),{once:true});
   setTimeout(hideSiteLoader,3000);
 }
 
@@ -24,7 +19,7 @@ const translations = {
     aboutLabel:'WHO WE ARE',aboutLine1:'Beyond construction.',aboutLine2:'Towards lasting value.',aboutLead:'At Firas Al Majd, every project is a responsibility. Every detail is an opportunity to build well.',aboutBody:'Firas Al Majd Construction brings together general contracting, fit-outs and infrastructure, alongside transport, material supply and landscaping. We connect the needs of your project through one coordinated workflow, from site preparation to handover.',qualityTitle:'Quality in execution',qualityText:'Considered materials. Careful details.',commitmentTitle:'Committed at every stage',commitmentText:'Clear coordination. Consistent follow-up.',discoverApproach:'Discover our vision',visualCaption:'The difference is in the details.',
     servicesLabel:'OUR EXPERTISE',servicesLine1:'Ambitious visions.',servicesLine2:'Integrated solutions.',servicesIntro:'From the groundworks to the finishing touches, we bring the disciplines your project needs together.',serviceHelp:'Need more than one specialty? Let’s coordinate the complete solution.',discussNeeds:'Discuss your requirements',
     approachLabel:'A CLEAR VISION',approachTitle:'Every step, considered.',approachIntro:'Good construction starts with understanding. We work with you through clear stages, keeping the full picture in view.',step1Title:'Listen & understand',step1Text:'We discuss your vision and site requirements to define the scope and priorities.',step2Title:'Plan with precision',step2Text:'We outline the execution, materials and schedule around your project’s requirements.',step3Title:'Build & coordinate',step3Text:'We coordinate teams and supply, with attention to quality and safety on site.',step4Title:'Deliver with care',step4Text:'We review the work with you and coordinate maintenance and follow-up needs.',
-    contactLabel:'LET’S BUILD SOMETHING THAT MATTERS',contactLine1:'Your next project',contactLine2:'starts with a conversation.',contactIntro:'Tell us what you have in mind. We’ll discuss the details and the services that suit your project.',phone:'CALL US',email:'EMAIL',visit:'OUR OFFICE',address:'King Abdulaziz District, Ibn Katheer St.<br>Riyadh 12233, Saudi Arabia',formTitle:'Tell us about your project',nameLabel:'Your name',namePlaceholder:'Full name',phoneLabel:'Mobile number',serviceLabel:'Required service',messageLabel:'Project brief',messagePlaceholder:'Project type, location and the details that matter to you…',formNote:'Prepare your message, then send it yourself through WhatsApp.',sendWhatsapp:'Continue to WhatsApp',openWhatsapp:'Open your message in WhatsApp',footerSlogan:'Built on trust. Made to last.',backTop:'Back to top',copyright:'Firas Al Majd Construction. All rights reserved.',selectService:'Choose a service',formReady:'Your message is ready. Review and send it in WhatsApp.',pageTitle:'Firas Al Majd | Building today. Shaping tomorrow.',metaDescription:'Firas Al Majd Construction — integrated construction, fit-out, infrastructure, logistics and landscaping services in Riyadh.'
+    contactLabel:'LET’S BUILD SOMETHING THAT MATTERS',contactLine1:'Your next project',contactLine2:'starts with a conversation.',contactIntro:'Tell us what you have in mind. We’ll discuss the details and the services that suit your project.',phone:'CALL US',email:'EMAIL',visit:'OUR OFFICE',address:'King Abdulaziz District, Ibn Katheer St.<br>Riyadh 12233, Saudi Arabia',formTitle:'Tell us about your project',nameLabel:'Your name',namePlaceholder:'Full name',phoneLabel:'Mobile number',serviceLabel:'Required service',messageLabel:'Project brief',messagePlaceholder:'Project type, location and the details that matter to you…',formNote:'Prepare your message, then send it yourself through WhatsApp.',sendWhatsapp:'Continue to WhatsApp',openWhatsapp:'Open your message in WhatsApp',footerSlogan:'Multiple disciplines. One vision.',backTop:'Back to top',copyright:'Firas Al Majd Construction. All rights reserved.',selectService:'Choose a service',formReady:'Your message is ready. Review and send it in WhatsApp.',pageTitle:'Firas Al Majd | Building today. Shaping tomorrow.',metaDescription:'Firas Al Majd Construction — integrated construction, fit-out, infrastructure, logistics and landscaping services in Riyadh.'
   }, ar: {}
 };
 document.querySelectorAll('[data-i18n]').forEach(el => { translations.ar[el.dataset.i18n] = el.innerHTML; });

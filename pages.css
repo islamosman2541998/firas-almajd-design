@@ -40,3 +40,27 @@ html[dir=rtl] .card-open .icon-arrow{transform:scaleX(-1)}
 @media(max-width:991px){html[lang=ar] .hero .hero-title{font-size:clamp(20px,6vw,58px)}}
 
 .service-gallery .disciplines-subtitle{font-size:clamp(18px,1.8vw,24px);line-height:1.7;margin:0;color:var(--muted)}
+
+/* Final hierarchy and alignment refinements. */
+.header-inner{grid-template-columns:auto minmax(0,1fr) auto;column-gap:clamp(22px,3vw,54px)}
+.site-header .brand{grid-column:3;justify-self:end}
+.desktop-nav{grid-column:2;justify-self:center}
+.hero .hero-title{font-size:clamp(38px,4vw,60px);line-height:1.5;letter-spacing:-1px}
+.page-intro h1{font-size:clamp(36px,4vw,58px)}
+.section-heading h2,.about-copy h2,.contact h2,.charter-heading h2,.faq-layout h2,.groundwork-top h2,.landscape-copy h2,.maintenance-layout h2,.page-cta h2,.method-layout aside h2,.detail-grid h2,.prep-grid h2,.application-layout>div h2{font-size:clamp(28px,2.8vw,40px)!important}
+.about-visual figcaption{inset-inline:0;width:100%;min-width:0;text-align:center;border-inline-start:0;border-bottom:3px solid var(--gold)}
+.service-gallery .disciplines-subtitle{font-size:clamp(22px,2.2vw,30px);font-weight:700;line-height:1.7}
+.footer-brand>p{font-size:16px;font-weight:700}
+@media(max-width:991px){
+  .header-inner{grid-template-columns:auto minmax(0,1fr) auto}
+  .site-header .brand{grid-column:3;justify-self:end}
+  .hero .hero-title,html[lang=ar] .hero .hero-title{font-size:clamp(36px,5.4vw,48px)}
+}
+@media(max-width:767px){
+  .hero .hero-title,html[lang=ar] .hero .hero-title{font-size:36px;line-height:1.55}
+  .page-intro h1,html[lang=en] .page-intro h1{font-size:34px}
+  .section-heading h2,.about-copy h2,.contact h2,.charter-heading h2,.faq-layout h2,.groundwork-top h2,.landscape-copy h2,.maintenance-layout h2,.page-cta h2,.method-layout aside h2,.detail-grid h2,.prep-grid h2,.application-layout>div h2{font-size:30px!important}
+  .service-gallery .disciplines-subtitle{font-size:23px}
+  .footer-brand>p{font-size:14px}
+}
+@media(max-width:359px){.hero .hero-title,html[lang=ar] .hero .hero-title{font-size:33px}}

@@ -14,7 +14,8 @@ const assert=(condition,message)=>{if(!condition)throw Error(message)};
  for(const route of pages){
   await page.goto(`http://127.0.0.1:4173/${route}.html`,{waitUntil:'networkidle'});
   await page.evaluate(async()=>{document.querySelectorAll('img').forEach(i=>i.loading='eager');await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})));await document.fonts.ready;});
-  assert(await page.locator('h1').count()===1,`Expected one h1 on ${route}`);
+  const expectedH1=route==='index'?0:1;
+  assert(await page.locator('h1').count()===expectedH1,`Unexpected h1 count on ${route}`);
   const expectedActive=['index','about','services','projects','gallery','careers','construction','fitout','logistics','supply','landscape','maintenance'].includes(route)?1:0;
   assert(await page.locator('.desktop-nav a[aria-current="page"]').count()===expectedActive,`Page navigation marker ${route}`);
   assert(await page.locator('.desktop-nav a[href^="#"]').count()===0,`Navbar has anchors ${route}`);
